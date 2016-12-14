@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" verbose="2" name="Failed suite [Tradeo Copy Trader Panel Tests]">
+  <test name="Functional(failed)">
+    <classes>
+      <class name="com.apetkova.web.tests.AbstractTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.AbstractTest -->
+      <class name="com.apetkova.web.tests.StopCopyingTests">
+        <methods>
+          <include name="closePanel"/>
+          <include name="stopCopyingTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.StopCopyingTests -->
+      <class name="com.apetkova.web.tests.BasicTests">
+        <methods>
+          <include name="navigateToCopyPanel"/>
+          <include name="closePanel"/>
+          <include name="logout"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.BasicTests -->
+      <class name="com.apetkova.web.tests.CrossTypeTests">
+        <methods>
+          <include name="closePanel"/>
+          <include name="demoCopyRealTest"/>
+          <include name="logout"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.CrossTypeTests -->
+      <class name="com.apetkova.web.tests.SameTypeTests">
+        <methods>
+          <include name="closePanel"/>
+          <include name="copyDynamicTest"/>
+          <include name="login"/>
+          <include name="copyStandardTest"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.SameTypeTests -->
+      <class name="com.apetkova.web.tests.Login">
+        <methods>
+          <include name="startDriver"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.apetkova.web.tests.Login -->
+    </classes>
+  </test> <!-- Functional(failed) -->
+</suite> <!-- Failed suite [Tradeo Copy Trader Panel Tests] -->
