@@ -18,6 +18,7 @@ public class BasicTests extends AbstractTest {
 		Assert.assertTrue(panel.getFlagIcon().isDisplayed());
 		Assert.assertTrue(panel.getAvatarImage().isDisplayed());
 		Assert.assertEquals(panel.getAccountTypeIndicator().getAttribute("class"), "demo-account");
+		// TODO: Verify specific user fields
 	}
 
 	@Test

@@ -2,9 +2,11 @@
 
 <suite name="Tradeo Copy Trader Panel Tests" parallel="none"
 	verbose="2" configfailurepolicy="continue">
-	<test name="Functional" group-by-instances="true">
-		<packages>
-			<package name="com.apetkova.web.tests" />
-		</packages>
-	</test>
+	<tests>
+		<test name="Functional" group-by-instances="true">
+			<packages>
+				<package name="com.apetkova.web.tests" />
+			</packages>
+		</test>
+	</tests>
 </suite> 

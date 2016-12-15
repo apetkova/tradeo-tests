@@ -34,6 +34,7 @@ public class StopCopyingTests extends AbstractTest {
 		panel.getStopCopyingButton().click();
 		panel.confirm();
 		getPage(userProfilePage);
+		reload();
 		accountPage = new AccountPage();
 		Assert.assertFalse(accountPage.isTraderCopied(copiedTraderName), "ASSERTION FAILURE: Trader is still copied");
 	}

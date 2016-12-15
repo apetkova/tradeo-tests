@@ -14,7 +14,7 @@ public abstract class AbstractPage extends PageFactory {
 	protected WebElement searchContext;
 
 	public AbstractPage() {
-		Driver.getNewWait(10).until(ExpectedConditions.presenceOfElementLocated(getAnchorElementLocation()));
+		Driver.getNewWait(15).until(ExpectedConditions.presenceOfElementLocated(getAnchorElementLocation()));
 		PageFactory.initElements(Driver.getDriver(), this);
 		searchContext = Driver.getDriver().findElement(By.tagName("body"));
 	}

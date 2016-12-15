@@ -3,10 +3,8 @@ package com.apetkova.web.tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 import com.apetkova.web.pages.CopyTraderPanel;
 import com.apetkova.web.pages.LoginPage;
@@ -26,13 +24,13 @@ public class AbstractTest {
 
 	protected CopyTraderPanel panel;
 
-	@BeforeSuite
 	public void startDriver() {
 		Driver.startDriver("chrome");
 	}
 
 	@BeforeClass
 	public void login() {
+		startDriver();
 		getPage(mainPage);
 		LoginPage loginPage = new LoginPage();
 		loginPage.login("aneta.v.petkova@gmail.com", "tradeoPass2016");
@@ -51,18 +49,22 @@ public class AbstractTest {
 		}
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void logout() {
 		Driver.getDriver().findElement(logoutLocator).click();
+		closeBrowser();
 	}
 
-	@AfterSuite(alwaysRun = true)
 	public void closeBrowser() {
 		Driver.stopDriver();
 	}
 
 	protected void getPage(String pageAddress) {
 		Driver.loadUrl(pageAddress);
+	}
+
+	protected void reload() {
+		Driver.getDriver().navigate().refresh();
 	}
 
 	protected void navigateToCopyPanel(String accountName) {
